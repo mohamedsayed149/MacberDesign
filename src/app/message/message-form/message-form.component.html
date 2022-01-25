@@ -1,0 +1,24 @@
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="Id" 
+    [value]="service.formData.Id" />
+
+    <div class="form-group">
+        <label>Subject</label>
+
+        <input type="text" class="form-control" placeholder="Subject" 
+        name="Subject" required minlength="6" #Subject="ngModel" [(ngModel)] = "service.formData.Subject"
+        [class.invalid] = "Subject.invalid && Subject.touched"/>
+    </div>
+
+    <div class="form-group">
+        <label>Message</label>
+
+        <textarea placeholder="Enter your message" class="form-control "
+        name="Body"  required rows="8"  #Body="ngModel" [(ngModel)] = "service.formData.Body"
+        [class.invalid] = "Body.invalid && Body.touched"></textarea>
+    </div>
+
+    <div class="form-group mt-3">
+        <button class="btn btn-primary" type="submit" [disabled] = "form.invalid">Submit</button>
+    </div>
+</form>

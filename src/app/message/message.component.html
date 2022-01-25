@@ -1,0 +1,30 @@
+
+<div class="jumbtron">
+    <h1 style="background-color: lightgrey;padding: 20px;" class="display-4 text-center py-3">
+        Send Message
+    </h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mt-4">
+
+        <app-message-form></app-message-form>
+
+    </div>
+    <div class="col-md-6 mt-4">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let msg of service.list">
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
